@@ -37,13 +37,17 @@ class Post extends Model
         );
     }
 
-    public function Category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+    // public function Category()
+    // {
+    // return $this->belongsTo(Category::class);
+    // }
 
-    public function author()
+    // public function author()
+    // {
+    // return $this->belongsTo(User::class, 'user_id');
+    // }
+    public function getRouteKeyName()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return 'slug';
     }
 }
